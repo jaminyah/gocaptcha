@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>WxAlert Contact</title>
+        <link rel="stylesheet" href="style.css">
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+        crossorigin="anonymous">
+        </script>
+    </head>
+    <body>
+
+        <h1>Captcha Form</h1>
+        <div class="container">
+            <form action="" method="post" id="captcha-form">
+                <div class=captcha-row > 
+                    <div id="captcha-img"></div>
+                    <input type="text" name="captcha-solution" id="captcha-solution" placeholder="captcha code" required />
+                    <input type="button" class="captcha-verify" id="captcha-verify" onclick="verifyCaptcha()" value="Verify" />
+                </div>
+                <div class="message"></div>
+                <div>
+                    <input type="submit" id="publish" value="Publish">
+                </div>
+            </form>
+        </div>
+
+        <script src="script.js" type="application/javascript"></script>
+
+        <footer>
+            <hr>
+            <p>&copy; <span id="timestamp"></span>&nbsp;WxAlert</p>
+                <script>
+                    document.onreadystatechange = () => {
+                        if (document.readyState === 'complete') {
+                            writeYear()
+                         }
+                    };
+
+                    function writeYear() {
+                      var date = new Date();
+                      var year = date.getFullYear();
+                      document.getElementById("timestamp").innerHTML = year;
+                    }
+                </script>
+        </footer>
+    </body>
+</html>    
